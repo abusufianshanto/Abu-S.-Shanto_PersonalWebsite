@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Abu S. Shanto</title>
+    <style>
+      * {
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-top: 5px;
+        margin-bottom: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #fafafa;
+        color: #333;
+        user-select: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+      }
+
+      /* Header style */
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        background-color: #444;
+        color: white;
+        position: relative; /* To position the menu */
+      }
+
+      /* Name on the left */
+      .name {
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      /* Burger menu style */
+      .menu-btn {
+        font-size: 30px;
+        cursor: pointer;
+        display: none; /* Hidden by default on larger screens */
+      }
+
+      /* Menu options */
+      nav ul {
+        list-style-type: none;
+        display: flex;
+        transition: max-height 0.3s ease-in-out;
+      }
+
+      nav ul li {
+        margin-left: 20px;
+      }
+
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+        padding: 5px 10px;
+        border-radius: 5px;
+        transition: background 0.3s;
+      }
+
+      nav ul li a:hover {
+        background-color: #555; /* Darker background on hover */
+      }
+
+      /* Blog section style */
+      .blog-section {
+        padding: 20px;
+        background-color: #fff;
+        margin-top: 20px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .blog-section h2 {
+        margin-bottom: 20px;
+        text-align: center;
+        color: #444;
+      }
+
+      article {
+        margin-bottom: 20px;
+        padding: 15px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        transition: transform 0.2s;
+      }
+
+      article:hover {
+        transform: scale(1.02); /* Scale up on hover */
+      }
+
+      article h3 {
+        margin-bottom: 10px;
+        color: #333;
+      }
+
+      /* Contact section style */
+      .contact-container {
+        text-align: center;
+        padding: 50px 20px;
+        background-color: #fff;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        margin: 50px auto;
+        max-width: 600px;
+      }
+
+      .contact-container h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+
+      .contact-container p {
+        font-size: 18px;
+      }
+
+      .contact-container a {
+        color: #007bff;
+        text-decoration: none;
+      }
+
+      .contact-container a:hover {
+        text-decoration: underline;
+      }
+
+      .cv-section {
+        padding: 40px;
+        max-width: 800px;
+        margin: 0 auto;
+        background-color: #fff;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .cv-section h1 {
+        text-align: center;
+        color: #444;
+        margin-bottom: 30px;
+      }
+
+      .cv-section h2 {
+        margin-bottom: 10px;
+        color: #444;
+      }
+
+      .cv-section p {
+        margin-bottom: 15px;
+        line-height: 1.6;
+      }
+
+      .cv-item {
+        margin-bottom: 20px;
+      }
+
+      .cv-item h3 {
+        margin-bottom: 5px;
+        color: #333;
+      }
+
+      .cv-item p {
+        margin-bottom: 0;
+        color: #666;
+      }
+
+      /* Footer style */
+      footer {
+        padding: 20px;
+        background-color: #444;
+        color: white;
+        text-align: center;
+      }
+
+      footer a {
+        color: white;
+        text-decoration: none;
+        margin: 0 10px;
+      }
+
+      /* Style for smaller screens */
+      @media (max-width: 768px) {
+        nav ul {
+          display: none; /* Hidden by default */
+          flex-direction: column;
+          position: absolute;
+          top: 60px;
+          right: 20px;
+          background-color: #333;
+          padding: 10px;
+          width: 150px; /* Adjust width as needed */
+        }
+
+        nav ul.show {
+          display: flex; /* Show when toggled */
+        }
+
+        .menu-btn {
+          display: block; /* Show the burger button */
+        }
+
+        article {
+          padding: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="name">
+        <a
+          href="https://abusufianshanto.com"
+          target="_parent"
+          style="color: white; text-decoration: none"
+        >
+          Abu S. Shanto
+        </a>
+      </div>
+      <div class="menu-btn" onclick="toggleMenu()">☰</div>
+      <nav>
+        <ul id="menu">
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#blogs">Blogs</a></li>
+          <li><a href="#cv">CV</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Blog section -->
+    <section id="blogs" class="blog-section">
+      <h2 id="lifeUpdates">Life Updates</h2>
+
+      <article>
+        <h3>Working at Bergzeit Company</h3>
+        <p>
+          When I first started my journey as a warehouse worker at Bergzeit
+          GmbH, located in the charming town of Otterfing, Germany, I was filled
+          with excitement and a hint of apprehension. Little did I know that
+          this role would not only shape my professional skills but also provide
+          me with valuable life lessons and friendships that would last a
+          lifetime. Bergzeit is known for its commitment to outdoor sports and
+          lifestyle products, offering a wide range of equipment and apparel for
+          hiking, climbing, skiing, and more.
+        </p>
+        <button onclick="toggleMore('more1')">More...</button>
+        <span id="more1" style="display: none">
+          As a warehouse worker, my day-to-day responsibilities varied. My tasks
+          included receiving incoming shipments, checking inventory levels,
+          picking and packing orders, and preparing shipments for delivery. The
+          pace could be fast, especially during peak seasons, but I thrived on
+          the challenge. The key was to stay organized and maintain a clear line
+          of communication with my team. I learned to prioritize tasks
+          efficiently, which helped us meet deadlines and exceed our customers’
+          expectations. One of the most significant lessons I learned at
+          Bergzeit was the importance of safety. Working in a warehouse can pose
+          various risks, from heavy lifting to operating machinery. Bergzeit
+          emphasized a safety-first approach, providing comprehensive training
+          sessions that covered everything from proper lifting techniques to
+          emergency procedures. This commitment to safety not only protected us
+          but also fostered a culture of responsibility and care among the team.
+          In addition to physical work, I also developed essential technical
+          skills while working at Bergzeit. I became proficient in using
+          warehouse management software to track inventory and manage orders.
+          This technological aspect of the job was particularly interesting to
+          me, as it connected my experience in logistics with my passion for
+          learning about new tools and systems. The training I received enabled
+          me to adapt quickly and contribute to process improvements within the
+          warehouse. Moreover, working at Bergzeit allowed me to experience the
+          thrill of being part of a well-oiled machine. Each successful order
+          fulfillment gave me a sense of accomplishment, knowing that I played a
+          role in delivering quality outdoor products to customers who shared my
+          love for adventure. The satisfaction of seeing our products reach
+          happy customers fueled my motivation to perform at my best every day.
+          As I reflect on my time at Bergzeit, I realize that this experience
+          has been instrumental in my personal and professional growth. I have
+          formed lasting friendships, developed a strong work ethic, and gained
+          invaluable skills that will serve me well in my future endeavors.
+          While the job can be challenging, the support from my colleagues and
+          the company’s positive environment make every day rewarding. In
+          conclusion, working at Bergzeit as a warehouse worker has been a
+          remarkable journey filled with challenges and triumphs. I have grown
+          both personally and professionally, and I am grateful for the
+          experiences that have shaped my time at this outstanding company.
+          Whether you’re passionate about outdoor sports or looking for a
+          dynamic workplace, Bergzeit offers an environment that fosters growth,
+          teamwork, and a love for adventure.
+        </span>
+      </article>
+
+      <article>
+        <h3>Studying Applied Artificial Intelligence at TH Rosenheim</h3>
+        <p>
+          As technology continues to advance at an unprecedented rate, the field
+          of artificial intelligence (AI) stands at the forefront of innovation.
+          Pursuing a degree in Applied Artificial Intelligence at TH Rosenheim,
+          one of Germany's leading universities, has been a transformative
+          experience...
+        </p>
+        <button onclick="toggleMore('more2')">More...</button>
+        <span id="more2" style="display: none">
+          TH Rosenheim offers a specialized program designed to meet the growing
+          demand for AI professionals in various industries. The curriculum
+          combines theoretical knowledge with practical applications, ensuring
+          that students are well-prepared to tackle real-world challenges. From
+          the outset, I was drawn to the program's emphasis on applied learning,
+          which is crucial in a field that evolves as rapidly as AI. One of the
+          highlights of studying at TH Rosenheim is the access to
+          state-of-the-art facilities and resources. The university invests
+          heavily in modern laboratories and technology, allowing students to
+          experiment with the latest AI tools and techniques. Whether it's
+          working with machine learning algorithms or exploring natural language
+          processing, the hands-on experience has been invaluable. I
+          particularly enjoyed working on projects that involved developing
+          intelligent systems capable of analyzing data and making decisions.
+          This practical approach to learning has solidified my understanding of
+          complex concepts and prepared me for future challenges in the
+          workforce. The faculty at TH Rosenheim is another standout aspect of
+          the program. Comprising experienced professionals and researchers in
+          the field, the professors bring a wealth of knowledge to the
+          classroom. They are not only passionate about their subjects but also
+          dedicated to mentoring students. I have benefitted from their guidance
+          on various projects and received insights that have helped me refine
+          my research interests. The small class sizes foster a collaborative
+          learning environment, where students are encouraged to engage in
+          discussions and share ideas. This sense of community has made my
+          academic journey even more enriching. As part of the curriculum, we
+          are encouraged to participate in research projects that address
+          real-world problems. One of my most rewarding experiences involved
+          collaborating with local businesses to implement AI solutions that
+          enhance their operations. This practical exposure not only helped me
+          apply my theoretical knowledge but also highlighted the ethical
+          considerations associated with AI deployment. It became clear that
+          while AI has immense potential, it also raises significant questions
+          regarding privacy, bias, and accountability. Engaging in discussions
+          about these issues with my peers and professors has deepened my
+          understanding of the societal impact of technology. Furthermore, TH
+          Rosenheim emphasizes the importance of interdisciplinary learning. The
+          program encourages collaboration with other departments, such as
+          business and engineering. This cross-disciplinary approach has
+          provided me with a broader perspective on how AI can be integrated
+          into various sectors. For example, I worked on a project that explored
+          the use of AI in supply chain management, which required an
+          understanding of both technology and business processes. This
+          experience underscored the significance of AI in driving efficiency
+          and innovation across industries. Networking opportunities are another
+          key component of studying at TH Rosenheim. The university hosts
+          numerous events, workshops, and guest lectures featuring industry
+          leaders. These events have allowed me to connect with professionals in
+          the AI field and gain insights into current trends and future
+          developments. Additionally, the university's strong ties to local
+          industries have opened doors for internships and job placements,
+          giving students a competitive edge in the job market. As I near the
+          end of my studies, I am excited about the future of AI and the role I
+          can play in it. The skills and knowledge I have gained at TH Rosenheim
+          have equipped me to contribute meaningfully to the field. I have
+          developed a strong foundation in machine learning, data analysis, and
+          AI ethics, all of which are essential for a successful career in this
+          dynamic industry. In conclusion, studying Applied Artificial
+          Intelligence at TH Rosenheim has been a pivotal experience in my
+          academic and professional journey. The combination of hands-on
+          learning, supportive faculty, interdisciplinary collaboration, and
+          networking opportunities has provided me with the tools necessary to
+          excel in the field. As AI continues to shape our world, I am eager to
+          apply what I have learned to create innovative solutions that
+          positively impact society. I wholeheartedly recommend this program to
+          anyone looking to embark on a rewarding career in artificial
+          intelligence.
+        </span>
+      </article>
+
+      <article>
+        <h3>Living in Munich: A City of Culture and Challenges</h3>
+        <p>
+          Munich, the capital of Bavaria, is renowned for its vibrant culture,
+          rich history, and stunning architecture. It is a city that
+          effortlessly blends tradition and modernity, offering a high quality
+          of life that attracts people from all over the world...
+        </p>
+        <button onclick="toggleMore('more3')">More...</button>
+        <span id="more3" style="display: none">
+          Despite the numerous advantages of living in Munich, the harsh reality
+          of the housing market quickly became apparent. The city is known for
+          having some of the highest rent prices in Germany, and this has only
+          escalated in recent years. The competition for affordable housing is
+          fierce, with demand far outstripping supply. As someone who moved here
+          for my studies and eventually settled down, I found myself grappling
+          with the challenges of securing a decent place to live. Finding an
+          apartment in Munich can often feel like a full-time job. Listings
+          disappear within hours, and applicants are frequently competing
+          against dozens, if not hundreds, of others. Many landlords prioritize
+          long-term tenants, making it difficult for newcomers or students to
+          find a suitable place. As a result, it’s common to end up in shared
+          accommodations or to compromise on location and amenities. The ideal
+          apartment that fits your budget often remains an elusive dream. The
+          cost of living extends beyond just rent. Grocery prices,
+          transportation, and utilities can add up quickly. Although Munich
+          boasts a well-connected public transport system, which includes trams,
+          buses, and trains, the monthly costs can become burdensome for those
+          on a tight budget. Eating out, while a delightful experience, also
+          comes with a hefty price tag compared to other German cities. A casual
+          meal at a restaurant can easily set you back €15 to €25, and that’s
+          before you factor in drinks. One of the most frustrating aspects of
+          living in Munich is the feeling that the city is slowly becoming less
+          accessible to young people and families. Many are forced to move to
+          the outskirts, where rent is marginally cheaper, but the trade-off
+          often involves longer commute times and less vibrant local culture.
+          The once-familiar neighborhoods where one could afford a comfortable
+          lifestyle are now increasingly gentrified, with high rents pushing out
+          long-time residents and transforming the character of the community.
+          Nevertheless, it’s not all doom and gloom. Munich’s cultural scene and
+          job opportunities make it an attractive place to live and work. The
+          city is home to numerous international companies and startups,
+          offering a wealth of career prospects, particularly in sectors like
+          technology and engineering. For those willing to navigate the high
+          costs, the potential for personal and professional growth is
+          significant. Moreover, Munich’s location is a major advantage. It
+          serves as a gateway to exploring the breathtaking Bavarian countryside
+          and the Alps. Weekend trips to picturesque towns like
+          Garmisch-Partenkirchen, Nuremberg, or even a quick jaunt to Austria or
+          Switzerland are easily within reach. The city's extensive parks and
+          green spaces provide ample opportunities for outdoor activities,
+          allowing residents to enjoy nature right within the urban environment.
+          In conclusion, living in Munich is a mixed bag of experiences. The
+          city’s unparalleled beauty, rich culture, and thriving job market make
+          it a desirable place to call home. However, the unbearable rent and
+          high living costs pose significant challenges that require careful
+          budgeting and planning. For anyone considering a move to this vibrant
+          city, it's essential to weigh these factors and be prepared for the
+          realities of Munich’s housing market. Despite the challenges, many
+          residents, including myself, find that the unique charm and
+          opportunities in Munich make the struggle worthwhile.
+        </span>
+      </article>
+    </section>
+
+    <!-- Contact section -->
+    <section id="contact" class="contact-container">
+      <h1>Contact Me</h1>
+      <p>
+        You can reach me at:
+        <a href="mailto:shantohridoy32@gmail.com">shantohridoy32@gmail.com</a>
+      </p>
+    </section>
+
+    <!-- CV section -->
+    <section id="cv" class="cv-section">
+      <h1>Curriculum Vitae</h1>
+
+      <!-- Personal Information -->
+      <div class="cv-item">
+        <h2>Personal Information</h2>
+        <p><strong>Name:</strong> Abu Sufian Shanto</p>
+        <p><strong>Email:</strong>shantohridoy32@gmail.com</p>
+        <p>
+          <strong>Website:</strong>
+          <a href="https://abusufianshanto.com" target="_blank"
+            >Abu S. Shanto</a
+          >
+        </p>
+      </div>
+
+      <!-- Education -->
+      <div class="cv-item">
+        <h2>Education</h2>
+        <h3>Technische Hochschule Rosenheim, Germany</h3>
+        <p>
+          Bachelor's Degree in Applied Artificial Intelligence (2023 - Present)
+        </p>
+
+        <h3>North South University, Bangladesh</h3>
+        <p>Bachelor's Degree in Computer Science & Engineering (2020- 2021)</p>
+      </div>
+
+      <!-- Work Experience -->
+      <div class="cv-item">
+        <h2>Work Experience</h2>
+        <h3>Bergzeit GmbH, Otterfing, Germany</h3>
+        <p>Warehouse Worker (2023 - Present)</p>
+        <ul>
+          <li>Managed and organized warehouse inventory.</li>
+          <li>Handled daily shipments and order fulfillment.</li>
+          <li>Ensured safety protocols and operational efficiency.</li>
+        </ul>
+
+        <!--
+        <h3>Previous Job Title</h3>
+        <p>Company Name (Year - Year)</p>
+        <ul>
+          <li>Key responsibility 1.</li>
+          <li>Key responsibility 2.</li>
+          <li>Key responsibility 3.</li>
+        </ul>
+        -->
+      </div>
+
+      <!-- Skills -->
+      <div class="cv-item">
+        <h2>Skills</h2>
+        <ul>
+          <li>Programming Languages: Python, JavaScript, Java etc.</li>
+          <li>Artificial Intelligence & Machine Learning</li>
+          <li>Warehouse Management Systems</li>
+          <li>Teamwork & Communication</li>
+        </ul>
+      </div>
+
+      <!-- Languages -->
+      <div class="cv-item">
+        <h2>Languages</h2>
+        <p>English - Fluent</p>
+        <p>German - Intermediate</p>
+        <p>Bengali - Native</p>
+      </div>
+    </section>
+
+    <!-- Footer section -->
+    <footer>
+      <p>
+        &copy; 2024
+        <a
+          href="https://abusufianshanto.com"
+          target="_parent"
+          style="color: white; text-decoration: none"
+          >Abu S. Shanto.</a
+        >All rights reserved.
+      </p>
+      <p>
+        <a href="#contact">Contact</a> |
+        <a href="https://x.com" target="_blank">x</a> |
+        <a href="https://www.linkedin.com/in/iamshanto32/" target="_blank"
+          >LinkedIn</a
+        >
+        |
+        <a href="https://github.com" target="_blank">GitHub</a>
+        <a href="https://www.facebook.com/iamshanto32/" target="_blank"
+          >facebook</a
+        >
+      </p>
+    </footer>
+
+    <script>
+      function toggleMenu() {
+        const menu = document.getElementById("menu");
+        menu.classList.toggle("show");
+      }
+
+      function toggleMore(id) {
+        const moreText = document.getElementById(id);
+        if (moreText.style.display === "none") {
+          moreText.style.display = "inline"; // Show the additional content
+        } else {
+          moreText.style.display = "none"; // Hide the additional content
+        }
+      }
+      // Hiding my source code from the user
+      document.addEventListener("contextmenu", (event) =>
+        event.preventDefault()
+      );
+      // Preventing users to copy the contents
+      document.addEventListener("copy", (event) => event.preventDefault());
+    </script>
+  </body>
+</html>
