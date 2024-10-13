@@ -4,31 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <meta name="description" content="Personal website of Abu Sufian Shanto" />
+    <script src="script.js"></script>
     <title>Abu S. Shanto</title>
   </head>
   <body>
-    <script>
-      function toggleMenu() {
-    const menu = document.getElementById("menu");
-    menu.classList.toggle("show");
-  }
-  
-  function toggleMore(id) {
-    const moreText = document.getElementById(id);
-    const moreBtn = event.target;
-  
-    if (moreText.style.display === "none") {
-      moreText.style.display = "inline";
-      moreBtn.style.display = "none"; // Hide the "More" button after click
-    }
-  }
-  
-  // Hiding my source code from the user
-  document.addEventListener("contextmenu", (event) => event.preventDefault());
-  // Preventing users to copy the contents
-  document.addEventListener("copy", (event) => event.preventDefault());
-  
-    </script>
+      
     <header>
       <div class="name">
         <a
@@ -317,8 +298,7 @@
         <p>
           <strong>Website:</strong>
           <a href="https://abusufianshanto.com" target="_blank"
-            >Abu S. Shanto</a
-          >
+            >Abu S. Shanto</a>
         </p>
       </div>
 
@@ -378,10 +358,10 @@
 
     <section id="projects" class="project-section">
       <div class="Projects&Learning">
-        <h3>Projects and Learning</h3>
-        <ul>
-          <li><a href="SimpleCalculator.html">Simple Calculator</a></li>
-          <li><a href="SimpleTemperatureConverter.html">Simple Temperature Converter</a></li>
+        <h2 class="projectsheadline">Projects and Learning</h3>
+        <ul class="projectsList">
+          <li><button onclick="openCalculator()">Simple Calculator</button></li>
+          <li><button onclick="openTempConverter()">Simple Temperature Converter</button></li>
         </ul>
       </div>
     </section>
@@ -410,27 +390,5 @@
         >
       </p>
     </footer>
-
-    <script>
-      function toggleMenu() {
-        const menu = document.getElementById("menu");
-        menu.classList.toggle("show");
-      }
-
-      function toggleMore(id) {
-        const moreText = document.getElementById(id);
-        if (moreText.style.display === "none") {
-          moreText.style.display = "inline"; // Show the additional content
-        } else {
-          moreText.style.display = "none"; // Hide the additional content
-        }
-      }
-      // Hiding my source code from the user
-      document.addEventListener("contextmenu", (event) =>
-        event.preventDefault()
-      );
-      // Preventing users to copy the contents
-      document.addEventListener("copy", (event) => event.preventDefault());
-    </script>
   </body>
 </html>

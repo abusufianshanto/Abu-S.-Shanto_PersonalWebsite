@@ -73,7 +73,7 @@
       // Delete the last character
       function deleteLast() {
         let currentDisplay = document.getElementById("result").value;
-        document.getElementById("result").value = currentDisplay(0, -1);
+        document.getElementById("result").value = currentDisplay.slice(0, -1);
       }
 
       // Calculate the result
@@ -81,8 +81,8 @@
         let currentDisplay = document.getElementById("result").value;
         try {
           document.getElementById("result").value = eval(currentDisplay);
-        } catch(e) {
-          document.getElementById("result").value = "Error"
+        } catch (e) {
+          document.getElementById("result").value = "Error";
         }
       }
     </script>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Abu S. Shanto</title>
+  </head>
+  <body>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #333;
+        color: white;
+        margin: 0;
+        padding: 0;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #444;
+        padding: 10px 20px;
+      }
+
+      .name {
+        font-size: 1.5em;
+      }
+
+      .menu-btn {
+        cursor: pointer;
+        font-size: 1.5em;
+      }
+
+      nav {
+        position: relative;
+      }
+
+      #menu {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: none; /* Hidden by default */
+        position: absolute;
+        right: 20px;
+        background-color: #444;
+        border: 1px solid #666;
+      }
+
+      #menu.show {
+        display: block; /* Shown when class 'show' is added */
+      }
+
+      #menu li {
+        padding: 10px;
+      }
+
+      #menu li a {
+        color: white;
+        text-decoration: none;
+      }
+
+      #menu li:hover {
+        background-color: #555;
+      }
+
+      .project-section {
+        padding: 20px;
+      }
+
+      footer {
+        text-align: center;
+        padding: 10px;
+        background-color: #444;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+      }
+    </style>
+
+    <header>
+      <div class="name">
+        <a
+          href="https://abusufianshanto.com"
+          target="_parent"
+          style="color: white; text-decoration: none"
+        >
+          Abu S. Shanto
+        </a>
+      </div>
+      <div class="menu-btn" onclick="toggleMenu()">☰</div>
+      <nav>
+        <ul id="menu">
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#blogs">Blogs</a></li>
+          <li><a href="#cv">CV</a></li>
+          <li><a href="#projects">Projects</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Projects and Learning Section -->
+    <section id="projects" class="project-section">
+      <div class="Projects&Learning">
+        <h2 class="projectsheadline">Projects and Learning</h2>
+        <ul class="projectsList">
+          <li><button onclick="openCalculator()">Simple Calculator</button></li>
+          <li>
+            <button
+              onclick="alert('Simple Temperature Converter Coming Soon!')"
+            >
+              Simple Temperature Converter
+            </button>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Footer section -->
+    <footer>
+      <p>
+        &copy; 2024
+        <a
+          href="https://abusufianshanto.com"
+          target="_parent"
+          style="color: white; text-decoration: none"
+          >Abu S. Shanto.</a
+        >
+        All rights reserved.
+      </p>
+    </footer>
+
+    <script>
+      function toggleMenu() {
+        const menu = document.getElementById("menu");
+        menu.classList.toggle("show");
+      }
+
+      function toggleMore(id) {
+        const moreText = document.getElementById(id);
+        if (moreText.style.display === "none") {
+          moreText.style.display = "inline"; // Show the additional content
+        } else {
+          moreText.style.display = "none"; // Hide the additional content
+        }
+      }
+
+      // Function to open a simple calculator in a new window
+      function openCalculator() {
+        const calculatorWindow = window.open(
+          "SimpleCalculator.html",
+          "Simple Calculator",
+          "width=500,height=500"
+        );
+      }
+
+      // Prevent default behaviors
+      document.addEventListener("contextmenu", (event) =>
+        event.preventDefault()
+      );
+      document.addEventListener("copy", (event) => event.preventDefault());
+    </script>
+  </body>
+</html>

@@ -159,6 +159,44 @@
     color: #666;
   }
 
+  /* Project Style */
+
+  .project-section {
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 20px;
+    text-align: center;
+    
+  }
+
+  .project-section h2 {
+    margin-bottom: 20px;
+    color: #444;
+  }
+
+  .projectsList li {
+    list-style: none;
+  }
+
+  .projectsList a {
+    text-decoration: none;
+  }
+
+  .projectsList {
+    display: grid;
+    grid-template-columns: repeat(4, 0.3fr);
+    gap: 1px;
+  }
+
+  button {
+    width: fit-content;
+    padding: 10px;
+    margin-bottom: 5px;
+    font-family: sans-serif;
+    font-size: 16px;
+
+  }
+
   /* Footer style */
   footer {
     padding: 20px;
