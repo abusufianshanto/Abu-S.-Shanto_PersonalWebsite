@@ -4,10 +4,31 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <script href="script.js"></script>
     <title>Abu S. Shanto</title>
   </head>
   <body>
+    <script>
+      function toggleMenu() {
+    const menu = document.getElementById("menu");
+    menu.classList.toggle("show");
+  }
+  
+  function toggleMore(id) {
+    const moreText = document.getElementById(id);
+    const moreBtn = event.target;
+  
+    if (moreText.style.display === "none") {
+      moreText.style.display = "inline";
+      moreBtn.style.display = "none"; // Hide the "More" button after click
+    }
+  }
+  
+  // Hiding my source code from the user
+  document.addEventListener("contextmenu", (event) => event.preventDefault());
+  // Preventing users to copy the contents
+  document.addEventListener("copy", (event) => event.preventDefault());
+  
+    </script>
     <header>
       <div class="name">
         <a
@@ -24,6 +45,7 @@
           <li><a href="#contact">Contact</a></li>
           <li><a href="#blogs">Blogs</a></li>
           <li><a href="#cv">CV</a></li>
+          <li><a href="#projects">Projects</a></li>
         </ul>
       </nav>
     </header>
@@ -51,8 +73,8 @@
           all my eggs in the crypto basket. But I’ve realized that diversifying
           my portfolio is essential for long-term success.
         </p>
-        <button onclick="toggleMore('more0')">More...</button>
-        <span id="more0" style="display: none">
+        <a onclick="toggleMore('more0')"><b>More...</b></b></a>
+        <span id="more0" style="display: none;">
           The hardest part of investing isn’t choosing where to put your
           money—it’s staying consistent. Market fluctuations can cause panic,
           especially when stocks dip, but I’ve learned to stick to my plan.
@@ -82,7 +104,7 @@
           lifestyle products, offering a wide range of equipment and apparel for
           hiking, climbing, skiing, and more.
         </p>
-        <button onclick="toggleMore('more1')">More...</button>
+        <a onclick="toggleMore('more1')"><b>More...</b></b></a>
         <span id="more1" style="display: none">
           As a warehouse worker, my day-to-day responsibilities varied. My tasks
           included receiving incoming shipments, checking inventory levels,
@@ -136,7 +158,7 @@
           one of Germany's leading universities, has been a transformative
           experience...
         </p>
-        <button onclick="toggleMore('more2')">More...</button>
+        <a onclick="toggleMore('more2')"><b>More...</b></b></a>
         <span id="more2" style="display: none">
           TH Rosenheim offers a specialized program designed to meet the growing
           demand for AI professionals in various industries. The curriculum
@@ -216,7 +238,7 @@
           effortlessly blends tradition and modernity, offering a high quality
           of life that attracts people from all over the world...
         </p>
-        <button onclick="toggleMore('more3')">More...</button>
+        <a onclick="toggleMore('more3')"><b>More...</b></b></a>
         <span id="more3" style="display: none">
           Despite the numerous advantages of living in Munich, the harsh reality
           of the housing market quickly became apparent. The city is known for
@@ -278,7 +300,8 @@
       <h1>Contact Me</h1>
       <p>
         You can reach me at:
-        <a href="mailto:shantohridoy32@gmail.com">shantohridoy32@gmail.com</a>
+        <a href="mailto:shantohridoy32@gmail.com">GMAIL</a>
+        <a href=""
       </p>
     </section>
 
@@ -351,6 +374,10 @@
         <p>German - Intermediate</p>
         <p>Bengali - Native</p>
       </div>
+    </section>
+
+    <section id="projects">
+      
     </section>
 
     <!-- Footer section -->
